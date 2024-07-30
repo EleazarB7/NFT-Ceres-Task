@@ -1,0 +1,179 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  height: 100%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #1a1a1a;
+}
+
+.wallet-address {
+  font-size: 12px;
+  color: #666;
+  word-break: break-all;
+  padding: 10px;
+  text-align: right;
+}
+
+.connect-wallet-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.connect-wallet-button {
+  background-color: transparent;
+  border: 1px solid #333;
+  color: #999;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  width: 80%;
+  max-width: 300px;
+}
+
+.connect-wallet-button:hover {
+  border-color: #555;
+  color: #bbb;
+}
+
+.debug-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+.debug-buttons button {
+  background-color: transparent;
+  border: 1px solid #333;
+  color: #999;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.debug-buttons button:hover {
+  border-color: #555;
+  color: #bbb;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-container {
+  text-align: center;
+}
+
+.register-container p {
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.register-container button {
+  background-color: transparent;
+  border: 1px solid #333;
+  color: #999;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.register-container button:hover {
+  border-color: #555;
+  color: #bbb;
+}
+
+.nft-collection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.nft-collection h2 {
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.nft-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1000px;
+}
+
+.nft-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  padding: 10px;
+  width: 150px;
+}
+
+.nft-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.nft-item button,
+.nft-item p {
+  margin-top: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.nft-item button {
+  background-color: transparent;
+  border: 1px solid #333;
+  color: #999;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.nft-item button:hover {
+  border-color: #555;
+  color: #bbb;
+}
+
+.nft-item p {
+  font-size: 12px;
+  color: #999;
+  word-break: break-all;
+}
