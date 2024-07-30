@@ -4,6 +4,10 @@ pragma solidity ^0.8.24;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
+/**
+ * @title NFTMinting
+ * @dev An ERC721 contract for minting NFTs with user registration, fees, and blacklist functionality.
+ */
 contract NFTMinting is ERC721, Ownable {
     // Counter for token IDs
     uint256 private _nextTokenId;
@@ -34,11 +38,17 @@ contract NFTMinting is ERC721, Ownable {
     event RegistrationFeeUpdated(uint256 newFee);
     event MintingFeeUpdated(uint256 newFee);
 
+    /**
+     * @dev Constructor that gives msg.sender all of existing tokens.
+     */
     constructor() ERC721("UserNFT", "UNFT") Ownable(msg.sender) {
         _nextTokenId = 1;
     }
 
-    // Function to register a user
+    /**
+     * @notice Registers a user if they are not already registered and not blacklisted. Requires a fee.
+     * @dev User must not be registered or blacklisted and must pay the registration fee.
+     */
     function registerUser() external payable {
         require(!registeredUsers[msg.sender], "User already registered");
         require(!blacklistedAddresses[msg.sender], "Address is blacklisted");
@@ -53,7 +63,10 @@ contract NFTMinting is ERC721, Ownable {
         }
     }
 
-    // Function to mint an NFT
+    /**
+     * @notice Mints a new NFT if the sender is registered and not blacklisted. Requires a fee.
+     * @dev User must be registered, not blacklisted, and must pay the minting fee. The total supply must not exceed MAX_SUPPLY.
+     */
     function mintNFT() external payable {
         require(registeredUsers[msg.sender], "User not registered");
         require(!blacklistedAddresses[msg.sender], "Address is blacklisted");
@@ -72,55 +85,85 @@ contract NFTMinting is ERC721, Ownable {
         }
     }
 
-    // Function to add an address to the blacklist (only owner)
+    /**
+     * @notice Adds an address to the blacklist. Only callable by the owner.
+     * @param _address The address to be blacklisted.
+     * @dev The address must not already be blacklisted.
+     */
     function addToBlacklist(address _address) external onlyOwner {
         require(!blacklistedAddresses[_address], "Address already blacklisted");
         blacklistedAddresses[_address] = true;
         emit AddedToBlacklist(_address);
     }
 
-    // Function to remove an address from the blacklist (only owner)
+    /**
+     * @notice Removes an address from the blacklist. Only callable by the owner.
+     * @param _address The address to be removed from the blacklist.
+     * @dev The address must be blacklisted.
+     */
     function removeFromBlacklist(address _address) external onlyOwner {
         require(blacklistedAddresses[_address], "Address not blacklisted");
         blacklistedAddresses[_address] = false;
         emit RemovedFromBlacklist(_address);
     }
 
-    // Function to withdraw contract balance (only owner)
+    /**
+     * @notice Withdraws the contract balance to the owner's address. Only callable by the owner.
+     * @dev The contract balance must be greater than zero.
+     */
     function withdrawFunds() external onlyOwner {
         uint256 balance = address(this).balance;
         require(balance > 0, "No funds to withdraw");
         payable(owner()).transfer(balance);
     }
 
-    // Function to update registration fee (only owner)
+    /**
+     * @notice Updates the registration fee. Only callable by the owner.
+     * @param _newFee The new registration fee.
+     */
     function setRegistrationFee(uint256 _newFee) external onlyOwner {
         registrationFee = _newFee;
         emit RegistrationFeeUpdated(_newFee);
     }
 
-    // Function to update minting fee (only owner)
+    /**
+     * @notice Updates the minting fee. Only callable by the owner.
+     * @param _newFee The new minting fee.
+     */
     function setMintingFee(uint256 _newFee) external onlyOwner {
         mintingFee = _newFee;
         emit MintingFeeUpdated(_newFee);
     }
 
-    // Function to check if a user is registered
+    /**
+     * @notice Checks if a user is registered.
+     * @param _user The address to check.
+     * @return bool True if the user is registered, false otherwise.
+     */
     function isUserRegistered(address _user) public view returns (bool) {
         return registeredUsers[_user];
     }
 
-    // Function to get the current token ID
+    /**
+     * @notice Gets the current token ID.
+     * @return uint256 The current token ID.
+     */
     function getCurrentTokenId() public view returns (uint256) {
         return _nextTokenId;
     }
 
-    // Function to set the base URI for token metadata (only owner)
+    /**
+     * @notice Sets the base URI for token metadata. Only callable by the owner.
+     * @param baseURI The new base URI.
+     */
     function setBaseURI(string memory baseURI) external onlyOwner {
         _baseTokenURI = baseURI;
     }
 
-    // Override the _baseURI function
+    /**
+     * @notice Internal function to get the base URI for token metadata.
+     * @return string The base URI.
+     */
     function _baseURI() internal view virtual override returns (string memory) {
         return _baseTokenURI;
     }
