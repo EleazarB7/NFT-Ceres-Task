@@ -76,14 +76,14 @@ npm install
 - Create a .env file in the contracts directory with your private key and Alchemy project ID:
 ```
 PRIVATE_KEY=your_private_key
-INFURA_PROJECT_ID=your_infura_project_id
+ALCHEMY_API_KEY=your_alchemy_api_key
 ```
 
 - Create a `.env` file in the backend directory with the following:
 
 ```
 MONGODB_URI=your_mongodb_connection_string
-CONTRACT_ADDRESS=0xb874b8d0165212a840Ac41d92866b1d7a4a50196
+CONTRACT_ADDRESS=contract_address
 RPC_URL=your_ethereum_node_url
 ```
 4. Compile, test, and deploy the smart contract:
