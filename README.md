@@ -4,36 +4,13 @@ This project is a full-stack application for minting NFTs and viewing NFT collec
 
 ## Table of Contents
 
-1. [Project Structure](#project-structure)
-2. [Smart Contract](#smart-contract)
-3. [Frontend](#frontend)
-4. [Backend](#backend)
-5. [Setup and Installation](#setup-and-installation)
-6. [Usage](#usage)
-7. [Contributing](#contributing)
-8. [License](#license)
-
-## Project Structure
-
-NFT-Ceres-Task/
-├── contracts/
-│ └── NFTMinting.sol
-├── frontend/
-│ ├── src/
-│ │ ├── App.tsx
-│ │ └── App.css
-│ ├── package.json
-│ └── tsconfig.json
-├── backend/
-│ ├── src/
-│ │ ├── models/
-│ │ │ └── Event.ts
-│ │ ├── contractListener.ts
-│ │ └── server.ts
-│ ├── NFTMinting.json
-│ ├── package.json
-│ └── tsconfig.json
-└── README.md
+1. [Smart Contract](#smart-contract)
+2. [Frontend](#frontend)
+3. [Backend](#backend)
+4. [Setup and Installation](#setup-and-installation)
+5. [Usage](#usage)
+6. [Contributing](#contributing)
+7. [License](#license)
 
 ## Smart Contract
 
@@ -69,10 +46,12 @@ Key features:
 ## Setup and Installation
 
 1. Clone the repository:
-   ```
-   git clone https://github.com/your-username/NFT-Ceres-Task.git
-   cd NFT-Ceres-Task
-   ```
+
+```
+git clone https://github.com/your-username/NFT-Ceres-Task.git
+cd NFT-Ceres-Task
+```
+
 2. Install dependencies:
 
 Frontend
@@ -81,3 +60,48 @@ Frontend
 cd frontend
 npm install
 ```
+
+Backend
+
+```
+cd ../backend
+npm install
+```
+
+3. Set up environment variables:
+
+- Create a `.env` file in the backend directory with the following:
+
+```
+MONGODB_URI=your_mongodb_connection_string
+CONTRACT_ADDRESS=0xb874b8d0165212a840Ac41d92866b1d7a4a50196
+RPC_URL=your_ethereum_node_url
+```
+
+4. Start the applications:
+
+Frontend
+
+```
+cd frontend
+npm start
+```
+
+Backend
+
+```
+cd ../backend
+npm start
+```
+
+## Usage
+
+1. Connect your wallet (MetaMask recommended) to the Sepolia testnet.
+2. Register as a user by paying the registration fee.
+3. Mint NFTs by paying the minting fee.
+4. View your NFT collection in the frontend.
+5. Use the backend API to retrieve event data for specific addresses.
+
+## License
+
+This project is licensed under the MIT License.
