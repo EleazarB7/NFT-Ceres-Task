@@ -29,7 +29,7 @@ body, html {
   flex-grow: 1;
 }
 
-.connect-wallet-button {
+.connect-wallet-button, .disconnect-wallet-button {
   background-color: transparent;
   border: 1px solid #333;
   color: #999;
@@ -45,7 +45,7 @@ body, html {
   max-width: 300px;
 }
 
-.connect-wallet-button:hover {
+.connect-wallet-button:hover, .disconnect-wallet-button:hover {
   border-color: #555;
   color: #bbb;
 }
