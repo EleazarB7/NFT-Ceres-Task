@@ -86,9 +86,10 @@ MONGODB_URI=your_mongodb_connection_string
 CONTRACT_ADDRESS=0xb874b8d0165212a840Ac41d92866b1d7a4a50196
 RPC_URL=your_ethereum_node_url
 ```
-4. Compile and deploy the smart contract
+4. Compile, test, and deploy the smart contract:
 ```
 npx hardhat compile
+npx hardhat test
 npx hardhat ignition deploy ignition/modules/NFTMinting.ts --network sepolia
 ```
 
