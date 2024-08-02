@@ -52,6 +52,11 @@ cd NFT-Ceres-Task
 
 2. Install dependencies:
 
+Smart Contract
+```
+npm install
+```
+
 Frontend
 
 ```
@@ -68,6 +73,12 @@ npm install
 
 3. Set up environment variables:
 
+- Create a .env file in the contracts directory with your private key and Alchemy project ID:
+```
+PRIVATE_KEY=your_private_key
+INFURA_PROJECT_ID=your_infura_project_id
+```
+
 - Create a `.env` file in the backend directory with the following:
 
 ```
@@ -75,8 +86,13 @@ MONGODB_URI=your_mongodb_connection_string
 CONTRACT_ADDRESS=0xb874b8d0165212a840Ac41d92866b1d7a4a50196
 RPC_URL=your_ethereum_node_url
 ```
+4. Compile and deploy the smart contract
+```
+npx hardhat compile
+npx hardhat run scripts/deploy.js --network sepolia
+```
 
-4. Start the applications:
+5. Start the applications:
 
 Frontend
 
