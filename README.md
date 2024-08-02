@@ -9,8 +9,7 @@ This project is a full-stack application for minting NFTs and viewing NFT collec
 3. [Backend](#backend)
 4. [Setup and Installation](#setup-and-installation)
 5. [Usage](#usage)
-6. [Contributing](#contributing)
-7. [License](#license)
+6. [License](#license)
 
 ## Smart Contract
 
