@@ -31,7 +31,6 @@ Key components:
 - Wallet connection
 - User registration
 - NFT minting
-- Collection viewer
 
 ## Backend
 
