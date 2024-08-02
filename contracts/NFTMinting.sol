@@ -38,9 +38,7 @@ contract NFTMinting is ERC721, Ownable {
     event RegistrationFeeUpdated(uint256 newFee);
     event MintingFeeUpdated(uint256 newFee);
 
-    /**
-     * @dev Constructor that gives msg.sender all of existing tokens.
-     */
+
     constructor() ERC721("UserNFT", "UNFT") Ownable(msg.sender) {
         _nextTokenId = 1;
     }
