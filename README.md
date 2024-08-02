@@ -97,8 +97,7 @@ npm start
 1. Connect your wallet (MetaMask recommended) to the Sepolia testnet.
 2. Register as a user by paying the registration fee.
 3. Mint NFTs by paying the minting fee.
-4. View your NFT collection in the frontend.
-5. Use the backend API to retrieve event data for specific addresses.
+4. Use the backend API to retrieve event data for specific addresses.
 
 ## License
 
