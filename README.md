@@ -1,6 +1,6 @@
 # NFT Minting 
 
-This project is a full-stack application for minting NFTs and viewing NFT's. It consists of a smart contract for NFT minting, a React frontend for user interaction, and a Node.js backend for event tracking.
+This project is a full-stack application for minting NFTs. It consists of a smart contract for NFT minting, a React frontend for user interaction, and a Node.js backend for event tracking.
 
 ## Table of Contents
 
